@@ -9,6 +9,14 @@ class Pessoa:
         return (date.today() - self.data_nascimento).days
 
     @property
+    def nome(self):
+        return self._nome.title()
+
+    @nome.setter
+    def nome(self, value):
+        self._nome = value
+
+    @property
     def data_nascimento(self):
         return self._data_nascimento
 
@@ -18,5 +26,6 @@ class Pessoa:
             raise ValueError('data_nascimento é um objeto tipo date')
         self._data_nascimento = value
 
-p1 = Pessoa('Ricardo', date(1999, 6, 14))
+p1 = Pessoa('Ricardo lima', date(1999, 6, 14))
+print("Nome: ", p1.nome)
 print("A quantidade de dias vividos foram: ", p1.dias_vividos())
